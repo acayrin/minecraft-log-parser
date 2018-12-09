@@ -3,7 +3,7 @@ ace.require('ace/ext/language_tools');
 ace.require('ace/ext/modelist');
 editor.setTheme('ace/theme/tomorrow_night_eighties');
 editor.session.setMode('ace/mode/yml');
-editor.session.setValue('Log parser - parse minecraft log\nfor error checking\n- acayrin\n\n');
+editor.session.setValue('');
 editor.setOptions({
   fontFamily: 'consolas',
   fontSize: '12px',
