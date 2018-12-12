@@ -34,12 +34,23 @@ editor.getSession().on('change', () => {
     if (lines[i - 1] != null && lines[i - 1].match(/[[a-zA-Z0-9/\-!@#$%^&*() ]+ERROR]:/g) == null && string.match(/[[a-zA-Z0-9/\-!@#$%^&*() ]+ERROR]:/g) != null) {
       string = string.replace(/[[0-9]+:[0-9]+:[0-9]+]/g, '');
       string = string.replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+ERROR]:/g, "<span style='color:#f43838'><strong>");
-      $("#res").append("<span style='color:#f43838'>ERROR at [<a href='#line" + i + "' style='color:#f43838'><strong>" + i + "</strong></a>] [<strong><a style='color:#f2da29' href='//google.com/search?q=url:spigotmc.org " + lines[i].replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+WARN]:/g,"").replace(/[[0-9]+:[0-9]+:[0-9]+]/g,"") + "' target='_blank'>Spigot</a></strong>] [<strong><a style='color:#f2da29' href='//google.com/search?q=url:bukkit.org " + lines[i].replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+WARN]:/g,"").replace(/[[0-9]+:[0-9]+:[0-9]+]/g,"") + "' target='_blank'>Bukkit</a></strong>] </span><span style='color:#cecece'>" + lines[i].replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+ERROR]:/g,"").replace(/[[0-9]+:[0-9]+:[0-9]+]/g,"") + "</span><br/>");
+      $("#res").append("<span style='color:#f43838'>ERROR at [<a href='#line" + i + "' style='color:#f43838'><strong>" + i + "</strong></a>] [<strong><a style='color:#f43838' href='//google.com/search?q=url:spigotmc.org " + lines[i].replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+WARN]:/g,"").replace(/[[0-9]+:[0-9]+:[0-9]+]/g,"") + "' target='_blank'>Spigot</a></strong>] [<strong><a style='color:#f43838' href='//google.com/search?q=url:bukkit.org " + lines[i].replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+WARN]:/g,"").replace(/[[0-9]+:[0-9]+:[0-9]+]/g,"") + "' target='_blank'>Bukkit</a></strong>] </span><span style='color:#cecece'>" + lines[i].replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+ERROR]:/g,"").replace(/[[0-9]+:[0-9]+:[0-9]+]/g,"") + "</span><br/>");
     } else if (lines[i - 1] != null && lines[i - 1].match(/[[a-zA-Z0-9/\-!@#$%^&*() ]+ERROR]:/g) != null && string.match(/[[a-zA-Z0-9/\-!@#$%^&*() ]+ERROR]:/g) != null) {
       string = string.replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+ERROR]:/g, "<span style='color:#f43838'><strong>");
       string = string.replace(/[[0-9]+:[0-9]+:[0-9]+]/g, '');
     } else {
       string = string.replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+ERROR]:/g, "<span style='color:#f43838'><strong>");
+    }
+    // FATAL
+    if (lines[i - 1] != null && lines[i - 1].match(/[[a-zA-Z0-9/\-!@#$%^&*() ]+FATAL]:/g) == null && string.match(/[[a-zA-Z0-9/\-!@#$%^&*() ]+FATAL]:/g) != null) {
+      string = string.replace(/[[0-9]+:[0-9]+:[0-9]+]/g, '');
+      string = string.replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+FATAL]:/g, "<span style='color:#ff0000'><strong>");
+      $("#res").append("<span style='color:#ff0000'>FATAL at [<a href='#line" + i + "' style='color:#ff0000'><strong>" + i + "</strong></a>] [<strong><a style='color:#ff0000' href='//google.com/search?q=url:spigotmc.org " + lines[i].replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+WARN]:/g,"").replace(/[[0-9]+:[0-9]+:[0-9]+]/g,"") + "' target='_blank'>Spigot</a></strong>] [<strong><a style='color:#ff0000' href='//google.com/search?q=url:bukkit.org " + lines[i].replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+WARN]:/g,"").replace(/[[0-9]+:[0-9]+:[0-9]+]/g,"") + "' target='_blank'>Bukkit</a></strong>] </span><span style='color:#cecece'>" + lines[i].replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+FATAL]:/g,"").replace(/[[0-9]+:[0-9]+:[0-9]+]/g,"") + "</span><br/>");
+    } else if (lines[i - 1] != null && lines[i - 1].match(/[[a-zA-Z0-9/\-!@#$%^&*() ]+FATAL]:/g) != null && string.match(/[[a-zA-Z0-9/\-!@#$%^&*() ]+FATAL]:/g) != null) {
+      string = string.replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+FATAL]:/g, "<span style='color:#ff0000'><strong>");
+      string = string.replace(/[[0-9]+:[0-9]+:[0-9]+]/g, '');
+    } else {
+      string = string.replace(/[[a-zA-Z0-9/\-!@#$%^&*() ]+FATAL]:/g, "<span style='color:#ff0000'><strong>");
     }
     for (let z = 0; z < 20; z++) {
       string = string.replace('[21m', '</strong><strong>');
