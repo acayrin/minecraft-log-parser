@@ -84,7 +84,7 @@ $(document).mouseup(function(b) {
 editor.getSession().on("change", function() {
     var m = editor.getSession().getValue();
     if (m == "") {
-        $("#right").html('<h2 style="color:#a5a5a5">Getting started</h2><h3 style="color:#a5a5a5">- Go to <i>/logs</i> folder in your server folder<br/>- Open the latest.log (or any from the archives)<br/>- Simply drag and drop the file to the editor<br/>- Wait for it to fully load and you are done :)<br/><br/><img src="https://img.shields.io/github/license/Acayrin/acayrin.github.io.svg"> <img src="https://img.shields.io/github/last-commit/Acayrin/acayrin.github.io.svg?label=latest"></h3>');
+        $("#right").html('<h2 style="color:#a5a5a5">Getting started</h2><h3 style="color:#a5a5a5">- Go to <i>/logs</i> folder in your server folder<br/>- Open the latest.log (or any from the archives)<br/>- Simply drag and drop the file to the editor<br/>- Wait for it to fully load and you are done :)<br/><br/><img src="https://img.shields.io/github/license/acayrin/minecraft-log-parser.svg"> <img src="https://img.shields.io/github/last-commit/acayrin/minecraft-log-parser.svg?label=latest"></h3>');
         $("#list").html("<table id='list'><tr><th>Type</th><th>Line</th><th>Error</th></tr></table>")
     } else {
         $("#res").css("height", $(document).outerHeight() - $("#editor").outerHeight() - 11);
