@@ -1,3 +1,4 @@
+## Will not update anymore, the app still works tho
+
 A log parser for minecraft
 
-warning: old messy code, need rework in near future
